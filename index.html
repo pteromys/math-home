@@ -23,6 +23,19 @@
 			li { margin-bottom: 0.25em; }
 			dt { font-weight: bold; margin-left: 1em; }
 			dd { margin-left: 2em; }
+			/* Contact info */
+			#employer, #properties {
+				display: inline-block; vertical-align: top;
+				margin: 0em;
+			}
+			#properties {
+				border-spacing: 0px; border-collapse: collapse;
+				border-width: 0px;
+			}
+			#properties th { font-weight: bold; text-align: right; }
+			#properties th, #properties td {
+				border-width: 0px; padding: 0.1em 0.25em;
+			}
 			/* Page */
 			html { margin: 0em; padding: 0em; }
 			body { max-width: 50em; margin: 0em auto; padding: 1em; }
@@ -96,17 +109,51 @@
 	</head>
 	<body>
 		<div itemscope itemtype="//schema.org/Person">
-		<div id="profile">
-			<img src="ageng.jpg" itemprop="image" alt="Photo of Andrew Geng" /><br />
-			Photo by S. Cho
+		<div id="profile" itemprop="image" itemscope itemtype="//schema.org/ImageObject">
+			<img src="ageng.jpg" itemprop="contentUrl" alt="Photo of Andrew Geng" /><br />
+			Photo by <span itemprop="author">S. Cho</span>
 		</div>
 		<h1 itemprop="name">Andrew Geng</h1>
+		<!--Also include CV? -->
+		<div id="employer">
+			<div id="department" itemprop="worksFor" itemscope itemtype="//schema.org/Organization">
+				<a href="//www.uchicago.edu/" itemprop="name">University of Chicago</a><br />
+				<a href="/" itemprop="department">Department of Mathematics</a><br />
+			</div>
+			<div id="postal" itemprop="address" itemscope itemtype="//schema.org/PostalAddress">
+				<span itemprop="streetAddress">5734 S University Avenue</span>
+				<br />
+				<span itemprop="addressLocality">Chicago</span>,
+				<span itemprop="addressRegion">IL</span>
+				<span itemprop="postalCode">60637-1514</span>
+				<br />
+				<span itemprop="addressCountry">USA</span>
+			</div>
+		</div>
+		<table id="properties">
+			<tr>
+				<th>E-mail</th>
+				<td><a href="mailto:ageng@math.uchicago.edu" itemprop="email">
+					ageng@math.uchicago.edu</a></td>
+			</tr>
+			<tr>
+				<th>Office</th>
+				<td itemprop="workLocation">
+					E14 in <a href="/people/graduate.shtml#eckhart">
+					Eckhart basement</a></td>
+			</tr>
+			<tr>
+				<th>Advisor</th>
+				<td><a href="/~farb/" itemprop="colleague">
+					Benson Farb</a></td>
+			</tr>
+		</table>
+		<p itemprop="description">I'm a fourth-year grad student in mathematics, studying actions of Lie groups on manifolds.</p>
 		<ul id="nav">
-			<li><a href="#">About</a></li>
+			<li><a href="#">Home</a></li>
 			<li><a href="#research">Research</a></li>
 			<li><a href="#teaching">Teaching</a></li>
 			<li><a href="#links">Links</a></li>
-			<!-- Make #about default via sibling selector -->
 			<!-- Include Talks and/or Expository? -->
 		</ul>
 		</div>
@@ -143,24 +190,6 @@
 			<li><a href="/~shmuel/TopTop.pdf">Shmuel Weinberger's "Topological Topics" course.</a></li>
 			<li><a href="firstyear.html">Links I kept around in my first year.</a></li>
 		</ul>
-		</div>
-
-		<div class="section" id="about">
-		<h2>About Me</h2>
-		<p>I'm a fourth-year grad student in mathematics, studying actions of Lie groups on manifolds under <a href="/~farb/">Benson Farb</a>. Find me in the <a href="/people/graduate.shtml#eckhart">Eckhart basement</a>, room E14.</p>
-		<div><a href="mailto:ageng@math.uchicago.edu" itemprop="email">ageng@math.uchicago.edu</a></div>
-		<p itemprop="address" itemscope itemtype=//schema.org/PostalAddress">
-			<!--Also include? a link to UChicago, office as list item, CV -->
-			<!--Andrew Geng
-			Department of Mathematics-->
-			<span itemprop="streetAddress">5734 S University Avenue</span>
-			<br />
-			<span itemprop="addressLocality">Chicago</span>,
-			<span itemprop="addressRegion">IL</span>
-			<span itemprop="postalCode">60637-1514</span>
-			<br />
-			<span itemprop="country-name">USA</span>
-		</p>
 		</div>
 	</body>
 </html>
