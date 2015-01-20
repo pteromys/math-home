@@ -5,26 +5,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="//www.uchicago.edu/favicon.ico" />
 		<style type="text/css">
+			/* UChicago color scheme */
+			h1 { color: #800000; }
+			h2 { color: #767676; }
+			h3 { color: #8f3931; }
+			#profile { color: #767676; }
+			html { color: #000000; background: #d6d6ce; }
+			body {
+				color: #000000; background: #ffffff;
+				box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.25);
+			}
 			/* Elements */
 			h1 { font-size: 180%; margin-top: 0em; }
-			h2 { border-bottom: 1px solid #999; }
+			h2 { border-width: 0px 0px 1px; border-style: solid; }
 			p { margin: 1em 0em; }
 			ul { padding-left: 2em; }
 			li { margin-bottom: 0.25em; }
 			dt { font-weight: bold; margin-left: 1em; }
 			dd { margin-left: 2em; }
 			/* Page */
-			html {
-				margin: 0em; padding: 0em;
-				background: #efe7d7;
-			}
-			body {
-				max-width: 50em;
-				margin: 0em auto;
-				padding: 1em;
-				background: #fff;
-				box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.5);
-			}
+			html { margin: 0em; padding: 0em; }
+			body { max-width: 50em; margin: 0em auto; padding: 1em; }
 			@media only screen {
 				html { height: 100%; }
 				body {
@@ -39,11 +40,11 @@
 				float: right; margin: 0em 0em 1em 1em;
 				/* Stay on top of transitioning elements */
 				position: relative; z-index: 10;
-				font-size: 80%; color: #999; text-align: center;
+				font-size: 80%; text-align: center;
 				max-width: 30%;
 			}
 			#profile img {
-				border: 1px solid #999;
+				border-width: 1px; border-style: solid;
 				max-width: 100%;
 			}
 			/* Nav section styling */
