@@ -10,6 +10,7 @@
 			h2 { color: #767676; }
 			h3 { color: #8f3931; }
 			#profile { color: #767676; }
+			#nav { background: #ffffff; border-color: #767676; border-radius: 0.25em; }
 			html { color: #000000; background: #d6d6ce; }
 			body {
 				color: #000000; background: #ffffff;
@@ -61,7 +62,7 @@
 			}
 			#profile img { border-width: 1px; border-style: solid; }
 			@media only screen {
-				#profile { max-width: 35%; }
+				#profile { max-width: 30%; }
 				#profile img { max-width: 100%; }
 			}
 			@media only print {
@@ -69,18 +70,27 @@
 			}
 			/* Nav section styling */
 			ul#nav {
-				margin: 1em 0em; padding: 0em; list-style-type: none;
 				font-weight: bold;
+				margin: 0em; padding: 0em; list-style-type: none;
 				position: relative; z-index: 20;
+				float: right; clear: right;
+				border-width: 1px; border-style: solid;
 			}
-			ul#nav > li { display: inline-block; vertical-align: middle; }
-			#nav a:link { padding: 0.25em; border-radius: 0.25em; }
+			ul#nav > li { margin-bottom: 0em; }
+			#nav a:link {
+				padding: 0.25em 0.5em; border-radius: 0.25em;
+				text-align: center; display: block;
+			}
 			@media not screen {
 				ul#nav { display: none; }
 			}
-			@media only screen and (min-width: 40em) {
-				ul#nav { margin: 0em; float: right; }
-				ul#nav:before { content: '\0027a1'; }
+			@media only screen and (min-width: 37em) {
+				ul#nav { clear: none; }
+			}
+			@media only screen and (min-width: 47em) {
+				#nav a:link { padding: 0.25em; }
+				ul#nav { margin: 0em; border-width: 0px; background: transparent; }
+				ul#nav > li { display: inline-block; vertical-align: middle; }
 			}
 			/* On screen, display one section at a time */
 			@media only screen {
