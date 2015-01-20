@@ -9,12 +9,12 @@
 			h1 { color: #800000; }
 			h2 { color: #767676; }
 			h3 { color: #8f3931; }
-			#profile { color: #767676; }
+			#photo { color: #767676; background: #ffffff; }
 			#nav { background: #ffffff; border-color: #767676; border-radius: 0.25em; }
 			html { color: #000000; background: #d6d6ce; }
-			body {
-				color: #000000; background: #ffffff;
-				box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.25);
+			body { color: #000000; background: #ffffff; }
+			@media only screen {
+				body { box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.25); }
 			}
 			/* Elements */
 			h1 { margin-top: 0em; }
@@ -37,46 +37,46 @@
 			#properties th, #properties td {
 				border-width: 0px; padding: 0.1em 0.25em;
 			}
-			#description { margin-top: 0em; }
 			@media only screen and (max-width: 28em) {
 				h1 { font-size: 170%; }
 			}
 			/* Page */
 			html { margin: 0em; padding: 0em; }
-			body { max-width: 50em; margin: 0em auto; padding: 1em; }
+			body { margin: 0em auto; padding: 1em; }
 			@media only screen {
 				html { height: 100%; }
 				body {
-					min-height: 100%;
+					max-width: 50em; min-height: 100%;
 					-webkit-box-sizing: border-box;
 					-moz-box-sizing: border-box;
 					box-sizing: border-box;
 				}
 			}
 			/* Profile picture. */
-			#profile {
+			#photo {
 				float: right; margin: 0em 0em 1em 1em;
 				/* Stay on top of transitioning elements */
 				position: relative; z-index: 10;
 				font-size: 80%; text-align: center;
 			}
-			#profile img { border-width: 1px; border-style: solid; }
+			#photo img { border-width: 1px; border-style: solid; }
 			@media only screen {
-				#profile { max-width: 30%; }
-				#profile img { max-width: 100%; }
+				#photo { max-width: 30%; }
+				#photo img { max-width: 100%; }
 			}
 			@media only screen and (max-height: 15em) {
-				#profile img { max-height: 7em; }
+				#photo img { max-height: 7em; }
 			}
 			@media only print {
-				#profile img { max-width: 1.33in; }
+				#photo img { max-width: 1.33in; }
 			}
 			/* Nav section styling */
 			ul#nav {
 				font-weight: bold;
-				margin: 0em; padding: 0em; list-style-type: none;
-				position: relative; z-index: 20;
+				padding: 0em; list-style-type: none;
+				margin: 0em 0em 0em 1em;
 				float: right; clear: right;
+				position: relative; z-index: 20;
 				border-width: 1px; border-style: solid;
 			}
 			ul#nav > li { margin-bottom: 0em; }
@@ -115,31 +115,27 @@
 					from { opacity: 0; top: -0.5em; }
 					to { opacity: 1; top: 0em; }
 				}
-				.section:target, .section ~ #contact {
+				.section:target, .section ~ #about {
 					display: block;
 					-webkit-animation: fadeIn 0.2s ease-out;
 					-moz-animation: fadeIn 0.2s ease-out;
 					animation: fadeIn 0.2s ease-out;
 				}
-				.section:not(:target), .section:target ~ #contact {
+				.section:not(:target), .section:target ~ #about {
 					display: none;
 				}
 			}
 		</style>
 	</head>
 	<body itemscope itemtype="//schema.org/Person">
-		<div id="profile" itemprop="image" itemscope itemtype="//schema.org/ImageObject">
+		<div id="photo" itemprop="image" itemscope itemtype="//schema.org/ImageObject">
 			<img src="ageng.jpg" itemprop="contentUrl" alt="Photo of Andrew Geng" /><br />
 			Photo by <span itemprop="author">S.&nbsp;Cho</span>
 		</div>
 		<h1 itemprop="name">Andrew Geng</h1>
-		<p id="description" itemprop="description">
-			I'm a fourth-year grad student in mathematics,
-			studying actions of Lie groups on manifolds.
-		</p>
 		<!--Also include CV? -->
 		<ul id="nav">
-			<li><a href="#contact">Contact</a></li>
+			<li><a href="#about">About</a></li>
 			<li><a href="#research">Research</a></li>
 			<li><a href="#teaching">Teaching</a></li>
 			<li><a href="#links">Links</a></li>
@@ -180,8 +176,12 @@
 		</ul>
 		</div>
 
-		<div class="section" id="contact">
-		<h2>Contact</h2>
+		<div class="section" id="about">
+		<h2>About me</h2>
+		<p id="description" itemprop="description">
+			I'm a fourth-year graduate student in mathematics,
+			interested in actions of Lie groups on manifolds.
+		</p>
 		<div id="address">
 			<b>Postal address</b>
 			<div id="department" itemprop="worksFor" itemscope itemtype="//schema.org/Organization">
