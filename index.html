@@ -16,7 +16,7 @@
 				box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.25);
 			}
 			/* Elements */
-			h1 { font-size: 180%; margin-top: 0em; }
+			h1 { margin-top: 0em; }
 			h2 { border-width: 0px 0px 1px; border-style: solid; }
 			p { margin: 1em 0em; }
 			ul { padding-left: 2em; }
@@ -26,7 +26,7 @@
 			/* Contact info */
 			#employer, #properties {
 				display: inline-block; vertical-align: top;
-				margin: 0em;
+				margin: 0em 0em 1em 0.5em;
 			}
 			#properties {
 				border-spacing: 0px; border-collapse: collapse;
@@ -35,6 +35,11 @@
 			#properties th { font-weight: bold; text-align: right; }
 			#properties th, #properties td {
 				border-width: 0px; padding: 0.1em 0.25em;
+			}
+			#description { margin-top: 0em; }
+			@media only screen and (max-width: 28em) {
+				h1 { font-size: 170%; }
+				#data { font-size: 90%; }
 			}
 			/* Page */
 			html { margin: 0em; padding: 0em; }
@@ -54,11 +59,15 @@
 				/* Stay on top of transitioning elements */
 				position: relative; z-index: 10;
 				font-size: 80%; text-align: center;
-				max-width: 30%;
 			}
-			#profile img {
-				border-width: 1px; border-style: solid;
-				max-width: 100%;
+			#profile img { border-width: 1px; border-style: solid; }
+			@media only screen {
+				#profile { max-width: 35%; }
+				#profile img { max-width: 100%; }
+			}
+			@media only print {
+				#data { font-size: 90%; }
+				#profile img { max-width: 1.33in; }
 			}
 			/* Nav section styling */
 			ul#nav {
@@ -111,10 +120,11 @@
 		<div itemscope itemtype="//schema.org/Person">
 		<div id="profile" itemprop="image" itemscope itemtype="//schema.org/ImageObject">
 			<img src="ageng.jpg" itemprop="contentUrl" alt="Photo of Andrew Geng" /><br />
-			Photo by <span itemprop="author">S. Cho</span>
+			Photo by <span itemprop="author">S.&nbsp;Cho</span>
 		</div>
 		<h1 itemprop="name">Andrew Geng</h1>
 		<!--Also include CV? -->
+		<div id="data">
 		<div id="employer">
 			<div id="department" itemprop="worksFor" itemscope itemtype="//schema.org/Organization">
 				<a href="//www.uchicago.edu/" itemprop="name">University of Chicago</a><br />
@@ -148,7 +158,11 @@
 					Benson Farb</a></td>
 			</tr>
 		</table>
-		<p itemprop="description">I'm a fourth-year grad student in mathematics, studying actions of Lie groups on manifolds.</p>
+		</div>
+		<p id="description" itemprop="description">
+			I'm a fourth-year grad student in mathematics,
+			studying actions of Lie groups on manifolds.
+		</p>
 		<ul id="nav">
 			<li><a href="#">Home</a></li>
 			<li><a href="#research">Research</a></li>
