@@ -1,0 +1,118 @@
+/* UChicago color scheme */
+#photo { color: #767676; background: #ffffff; }
+#nav { background: #f1f1f1; border-color: #767676; border-radius: 0.25em; }
+@media only screen {
+	body { box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.25); }
+}
+#nav a:hover { background: #b1746f; color: #ffffff; }
+@media only screen and (min-width: 47em) {
+	#nav a:link { color: #c16622; }
+	#nav a:visited { color: #9a5324; }
+	#nav a:hover { background: transparent; color: #cc8214; }
+}
+
+/* Contact info */
+#address, #properties {
+	display: inline-block; vertical-align: top;
+	margin: 0em 0em 1em 0.5em;
+}
+#properties {
+	border-spacing: 0px; border-collapse: collapse;
+	border-width: 0px;
+}
+#properties th { font-weight: bold; text-align: right; }
+#properties th, #properties td {
+	border-width: 0px; padding: 0.1em 0.25em;
+}
+@media only screen and (max-width: 28em) {
+	h1 { font-size: 170%; }
+}
+
+/* Page */
+html { margin: 0em; padding: 0em; }
+body { margin: 0em auto; padding: 1em; }
+@media only screen {
+	html { height: 100%; }
+	body {
+		max-width: 50em; min-height: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
+/* Profile picture */
+#photo {
+	float: right; margin: 0em 0em 1em 1em;
+	/* Stay on top of transitioning elements */
+	position: relative; z-index: 10;
+	font-size: 80%; text-align: center;
+}
+#photo img { border-width: 1px; border-style: solid; }
+@media only screen {
+	#photo { max-width: 30%; }
+	#photo img { max-width: 100%; }
+}
+@media only screen and (max-height: 15em) {
+	#photo img { max-height: 7em; }
+}
+@media only print {
+	#photo img { max-width: 1.33in; }
+}
+
+/* Nav section styling */
+ul#nav {
+	font-weight: bold;
+	padding: 0em; list-style-type: none;
+	margin: 0em 0em 0em 1em;
+	float: right; clear: right;
+	position: relative; z-index: 20;
+	border-width: 1px; border-style: solid;
+}
+ul#nav > li { margin-bottom: 0em; }
+#nav a:link {
+	padding: 0.25em 0.5em;
+	text-align: center; display: block;
+}
+@media not screen {
+	ul#nav { display: none; }
+}
+@media only screen and (min-width: 37em) {
+	ul#nav { clear: none; }
+}
+@media only screen and (min-width: 47em) {
+	#nav a:link { padding: 0.25em; border-radius: 0.25em; }
+	ul#nav { margin: 0em; border-width: 0px; background: transparent; }
+	ul#nav > li { display: inline-block; vertical-align: middle; }
+}
+
+/* On screen, display one section at a time */
+@media only screen {
+	.section > :first-child { margin-top: 0em; }
+	.section {
+		padding: 1px 0px; margin: -2px 0px 0px;
+		width: 100%; position: relative;
+	}
+	/* Use animations; no transitions when display changes.*/
+	@-webkit-keyframes fadeIn {
+		from { opacity: 0; top: -0.5em; }
+		to { opacity: 1; top: 0em; }
+	}
+	@-moz-keyframes fadeIn {
+		from { opacity: 0; top: -0.5em; }
+		to { opacity: 1; top: 0em; }
+	}
+	@keyframes fadeIn {
+		from { opacity: 0; top: -0.5em; }
+		to { opacity: 1; top: 0em; }
+	}
+	.section:target, .section ~ #about {
+		display: block;
+		-webkit-animation: fadeIn 0.2s ease-out;
+		-moz-animation: fadeIn 0.2s ease-out;
+		animation: fadeIn 0.2s ease-out;
+	}
+	.section:not(:target), .section:target ~ #about {
+		display: none;
+	}
+}

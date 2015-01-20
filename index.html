@@ -4,133 +4,8 @@
 		<title>Andrew Geng</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="//www.uchicago.edu/favicon.ico" />
-		<style type="text/css">
-			/* UChicago color scheme */
-			h1 { color: #800000; }
-			h2 { color: #767676; }
-			h3 { color: #8f3931; }
-			#photo { color: #767676; background: #ffffff; }
-			#nav { background: #ffffff; border-color: #767676; border-radius: 0.25em; }
-			html { color: #000000; background: #d6d6ce; }
-			body { color: #000000; background: #ffffff; }
-			@media only screen {
-				body { box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.25); }
-			}
-			a:link { color: #8f3931; }
-			a:visited { color: #725663; }
-			a:hover { color: #cc8214; }
-			a:active { color: #ffa319; }
-			#nav a:hover { background: #b1746f; color: #ffffff; }
-			/* Elements */
-			h1 { margin-top: 0em; }
-			h2 { border-width: 0px 0px 1px; border-style: solid; }
-			p { margin: 1em 0em; }
-			ul { padding-left: 2em; }
-			li { margin-bottom: 0.25em; }
-			dt { font-weight: bold; margin-left: 1em; }
-			dd { margin-left: 2em; }
-			/* Contact info */
-			#address, #properties {
-				display: inline-block; vertical-align: top;
-				margin: 0em 0em 1em 0.5em;
-			}
-			#properties {
-				border-spacing: 0px; border-collapse: collapse;
-				border-width: 0px;
-			}
-			#properties th { font-weight: bold; text-align: right; }
-			#properties th, #properties td {
-				border-width: 0px; padding: 0.1em 0.25em;
-			}
-			@media only screen and (max-width: 28em) {
-				h1 { font-size: 170%; }
-			}
-			/* Page */
-			html { margin: 0em; padding: 0em; }
-			body { margin: 0em auto; padding: 1em; }
-			@media only screen {
-				html { height: 100%; }
-				body {
-					max-width: 50em; min-height: 100%;
-					-webkit-box-sizing: border-box;
-					-moz-box-sizing: border-box;
-					box-sizing: border-box;
-				}
-			}
-			/* Profile picture. */
-			#photo {
-				float: right; margin: 0em 0em 1em 1em;
-				/* Stay on top of transitioning elements */
-				position: relative; z-index: 10;
-				font-size: 80%; text-align: center;
-			}
-			#photo img { border-width: 1px; border-style: solid; }
-			@media only screen {
-				#photo { max-width: 30%; }
-				#photo img { max-width: 100%; }
-			}
-			@media only screen and (max-height: 15em) {
-				#photo img { max-height: 7em; }
-			}
-			@media only print {
-				#photo img { max-width: 1.33in; }
-			}
-			/* Nav section styling */
-			ul#nav {
-				font-weight: bold;
-				padding: 0em; list-style-type: none;
-				margin: 0em 0em 0em 1em;
-				float: right; clear: right;
-				position: relative; z-index: 20;
-				border-width: 1px; border-style: solid;
-			}
-			ul#nav > li { margin-bottom: 0em; }
-			#nav a:link {
-				padding: 0.25em 0.5em;
-				text-align: center; display: block;
-			}
-			@media not screen {
-				ul#nav { display: none; }
-			}
-			@media only screen and (min-width: 37em) {
-				ul#nav { clear: none; }
-			}
-			@media only screen and (min-width: 47em) {
-				#nav a:link { padding: 0.25em; border-radius: 0.25em; }
-				ul#nav { margin: 0em; border-width: 0px; background: transparent; }
-				ul#nav > li { display: inline-block; vertical-align: middle; }
-			}
-			/* On screen, display one section at a time */
-			@media only screen {
-				.section > :first-child { margin-top: 0em; }
-				.section {
-					padding: 1px 0px; margin: -2px 0px 0px;
-					width: 100%; position: relative;
-				}
-				/* Use animations; no transitions when display changes.*/
-				@-webkit-keyframes fadeIn {
-					from { opacity: 0; top: -0.5em; }
-					to { opacity: 1; top: 0em; }
-				}
-				@-moz-keyframes fadeIn {
-					from { opacity: 0; top: -0.5em; }
-					to { opacity: 1; top: 0em; }
-				}
-				@keyframes fadeIn {
-					from { opacity: 0; top: -0.5em; }
-					to { opacity: 1; top: 0em; }
-				}
-				.section:target, .section ~ #about {
-					display: block;
-					-webkit-animation: fadeIn 0.2s ease-out;
-					-moz-animation: fadeIn 0.2s ease-out;
-					animation: fadeIn 0.2s ease-out;
-				}
-				.section:not(:target), .section:target ~ #about {
-					display: none;
-				}
-			}
-		</style>
+		<link rel="stylesheet" href="base.css" />
+		<link rel="stylesheet" href="index.css" />
 	</head>
 	<body itemscope itemtype="//schema.org/Person">
 		<div id="photo" itemprop="image" itemscope itemtype="//schema.org/ImageObject">
@@ -138,13 +13,13 @@
 			Photo by <span itemprop="author">S.&nbsp;Cho</span>
 		</div>
 		<h1 itemprop="name">Andrew Geng</h1>
-		<!--Also include CV? -->
 		<ul id="nav">
 			<li><a href="#about">About</a></li>
 			<li><a href="#research">Research</a></li>
 			<li><a href="#teaching">Teaching</a></li>
 			<li><a href="#links">Links</a></li>
 			<!-- Include Talks and/or Expository? -->
+			<!--Also include CV? -->
 		</ul>
 
 		<div class="section" id="research">
@@ -152,8 +27,6 @@
 		<h3>Papers</h3>
 		<dl>
 			<dt>When are radicals of Lie groups lattice-hereditary?</dt>
-			<!--dd>Let G be a connected Lie group, R its radical, and &Gamma;
-			a lattice in G. Is &Gamma; &cap; R a lattice in R?</dd-->
 			<dd>Preprint
 			[<a href="//arxiv.org/abs/1501.04216">arXiv:1501.04216</a>]</dd>
 			<dt>Two surfaces in D<sup>4</sup> bounded by the same knot</dt>
