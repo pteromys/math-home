@@ -1,3 +1,6 @@
+/* Font imports */
+@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic);
+
 /* UChicago color scheme */
 h1 { color: #800000; }
 h2, h4, h6 { color: #767676; }
@@ -20,7 +23,7 @@ a:active { color: #ffa319; }
 
 /* Elements */
 body { line-height: 1.5; }
-body { font-family: Arial, sans-serif, sans; }
+body { font-family: 'Quattrocento Sans', Arial, sans-serif, sans; }
 h1, h2, h3, h4, h5, h6 { font-family: serif; line-height: 1.2; margin-bottom: 0.5em; }
 h1, h2 { font-weight: 300; }
 h3, h4, h5, h6 { font-weight: bold; }
