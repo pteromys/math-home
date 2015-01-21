@@ -3,6 +3,11 @@
 #nav { background: #f1f1f1; border-color: #767676; border-radius: 0.25em; }
 @media only screen {
 	body { box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 0.25); }
+	h1 {
+		color: #ffffff; background: #800000;
+		background: -moz-linear-gradient(90deg, #8f3931, #800000);
+		background: linear-gradient(0deg, #8f3931, #800000);
+	}
 }
 #nav a:hover { background: #b1746f; color: #ffffff; }
 @media only screen and (min-width: 47em) {
@@ -39,6 +44,8 @@ body { margin: 0em auto; padding: 1em; }
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+	#headcontainer { margin: -1em -1em 0.6em; }
+	h1 { padding: 0.4em 0.5em; line-height: 1.0; margin: 0em; }
 }
 
 /* Profile picture */
