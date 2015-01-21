@@ -62,6 +62,7 @@ ul#nav > li { margin-bottom: 0em; }
 #nav a:link {
 	padding: 0.25em 0.5em;
 	text-align: center; display: block;
+	text-decoration: none;
 }
 @media not screen {
 	ul#nav { display: none; }
