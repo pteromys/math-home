@@ -35,10 +35,15 @@
 #photo img { border-width: 1px; border-style: solid; }
 @media only screen {
 	#photo { max-width: 30%; }
-	#photo img { max-width: 100%; }
+	#photo img {
+		max-width: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
 }
 @media only screen and (max-height: 15em) {
-	#photo img { max-height: 7em; }
+	#photo { max-width: 7em; }
 }
 @media only print {
 	#photo img { max-width: 1.33in; }
